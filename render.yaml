@@ -1,0 +1,20 @@
+# render.yaml
+services:
+  - type: web
+    name: baccarat-ai-app
+    env: python
+    plan: free
+    # A list of secret files for our project.
+    # This is for the .h5 and .pkl files.
+    secretFiles:
+      - key: BACCARAT_LSTM_RICH_MODEL
+        name: baccarat_lstm_rich_model.h5
+        path: . # Put it in the root directory
+      - key: RICH_MODEL_SCALER
+        name: rich_model_scaler.pkl
+        path: . # Put it in the root directory
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
