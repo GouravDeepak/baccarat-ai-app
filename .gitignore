@@ -1,0 +1,19 @@
+# Virtual Environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code specific
+.vscode/
+
+# Data files (optional, but good practice if they are large or private)
+# converted_data.json
+# original_data.json
+# game_data.json
+
+# Model files (optional, can be large)
+# *.pkl
+# *.h5
